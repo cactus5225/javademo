@@ -1,12 +1,7 @@
 import com.google.common.util.concurrent.RateLimiter;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Hashtable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.*;
 import java.util.concurrent.Semaphore;
 
 /**
@@ -44,25 +39,18 @@ public class Test {
     @org.junit.Test
     public void testRate(){
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd HH:mm:ss.SSS");
-
         RateLimiter rateLimiter = RateLimiter.create(2);
-
         while(true) {
-
             rateLimiter.acquire();
-
             System.out.println(simpleDateFormat.format(new Date()));
-
         }
     }
 
     @org.junit.Test
     public void testFinally(){
-
         if (3>1){
             return;
         }
-
         try {
             System.out.println("try");
         }finally {
@@ -74,10 +62,8 @@ public class Test {
     @org.junit.Test
     public void testSemaphore(){
         final Semaphore sp = new Semaphore(3);//创建一个Semaphore信号量，并设置最大并发数为3
-
         //availablePermits() //用来获取当前可用的访问次数
         System.out.println("初始化：当前有" + (3 - sp.availablePermits() + "个并发"));
-
         //创建10个任务，上面的缓存线程池就会创建10个对应的线程去执行
         for (int index = 0; index < 10; index++) {
             final int NO = index;  //记录第几个任务
@@ -100,8 +86,10 @@ public class Test {
     }
 
     @org.junit.Test
-    public void getPath(){
-        System.out.println(System.getProperty("user.dir")+"/src/main/resources/innerclass.txt");//user.dir指定了当前的路径
+    public void testProperties(){
+        // this will list the current system properties
+        Properties p = System.getProperties();
+        p.list(System.out);
     }
 
 
