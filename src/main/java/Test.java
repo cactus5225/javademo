@@ -92,5 +92,66 @@ public class Test {
         p.list(System.out);
     }
 
+    @org.junit.Test
+    public  void testString(){
+        String str = "大漂亮集团有限公司杭州分行";
+        System.out.println(str.substring(0,str.indexOf("公司")+2));
+
+    }
+
+    @org.junit.Test
+    public void testDate(){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
+        Date date = new Date();
+        String today = simpleDateFormat.format(date);
+        System.out.println(today);
+
+        Calendar c = Calendar.getInstance();
+        c.setTime(new Date());
+        c.add(Calendar.MONTH, -1);
+        Date m = c.getTime();
+        String mon = simpleDateFormat.format(m);
+        System.out.println("过去一个月："+mon);
+    }
+
+    @org.junit.Test
+    public void testSwap(){
+//        Integer a = 1;
+//        Integer b =1;
+//
+//        System.out.println(a.hashCode());
+//        System.out.println(b.hashCode());
+//
+//        Integer c= a;
+//        System.out.println(c.hashCode());
+
+//        Integer i = new Integer(1);
+//        Integer j = i;
+//        System.out.println(j);
+//        i = 2;
+//        System.out.println(j);
+//        System.out.println(i);
+
+//        Integer a = 10;
+//        Integer b = 10;
+//        System.out.println(a == b);
+//
+//        Integer c = 1000;
+//        Integer d = 1000;
+//        System.out.println(c == d);
+
+        Integer a = 1000;
+        Integer b = a;
+
+        a =a+b;
+        b=a-b;
+        a= a-b;
+
+        System.out.println(a);
+        System.out.println(b);
+
+
+    }
+
 
 }
