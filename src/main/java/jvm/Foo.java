@@ -1,4 +1,4 @@
-package jvm;
+//package jvm;
 
 /**
  * Created by xufei on 2019/7/25.
@@ -7,8 +7,8 @@ package jvm;
 public class Foo {
     public static void main(String[] args) {
         boolean flag = true;
-        if (flag) System.out.println("Hello, Java!");
-        if (flag == true) System.out.println("Hello, JVM!");
+        if (flag) System.out.println("HelloWorld, Java!");
+        if (flag == true) System.out.println("HelloWorld, JVM!A");
     }
 }
 /**
