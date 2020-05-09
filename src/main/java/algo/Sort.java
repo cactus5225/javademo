@@ -228,10 +228,39 @@ public class Sort {
     /**
      * 快速排序
      * 思路
+     *
      */
     @Test
     public void quickSort() {
+        int[] data = new int[]{13, 2, 4, 8,5,89,0};
+        quick_sort(data,0,data.length-1);
+        System.out.println(Arrays.toString(data));
+    }
 
+    private void quick_sort(int[] data,int p,int r){
+        if (p>=r){
+            return;
+        }
+
+        int q = partition(data,p,r);
+        quick_sort(data,p,q-1);
+        quick_sort(data,q+1,r);
+    }
+
+    private int partition(int[] data,int p ,int r){
+        int tmp = data[r];//选取最后一个节点为分区点
+        int i = p;//分为已排序区和未排序区，i为未排序区的第一个节点
+        for (int j = i ;j<r ;j++){
+            if (data[j]<tmp){
+                int m = data[j];
+                data[j]=data[i];
+                data[i]=m;
+                i++;
+            }
+        }
+        data[r]=data[i];
+        data[i]=tmp;
+        return i;
     }
 
 
@@ -250,6 +279,8 @@ public class Sort {
 
         return array;
     }
+
+
 
     @Test
     public void test() {
