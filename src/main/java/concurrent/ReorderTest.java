@@ -38,6 +38,7 @@ public class ReorderTest {
                 y = a;
             });
             one.start();
+
             other.start();
             latch.countDown();
 
