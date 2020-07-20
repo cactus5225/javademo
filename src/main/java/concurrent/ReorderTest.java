@@ -40,6 +40,7 @@ public class ReorderTest {
             one.start();
             other.start();
             latch.countDown();
+
             one.join();
 
             other.join();
