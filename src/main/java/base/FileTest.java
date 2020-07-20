@@ -17,6 +17,7 @@ public class FileTest {
         java.nio.file.Path  path = Paths.get(localFilePath);
         byte[] data = Files.readAllBytes(path);
         String result = new String(data, "utf-8");
+
         System.out.println(result);
 
     }
