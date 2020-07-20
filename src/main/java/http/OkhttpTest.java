@@ -47,6 +47,7 @@ public class OkhttpTest {
         String publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCoPDrTGRLzHW02Sp7FFLM+vS4KvGy3nLpipaS8iKWFpdBdT5sgUrm16ZztRyBVhdYwSds3vdIJNZtrBY6R0n+IJe3q4elhh+dw4Yw7FmxDRD5CqK/cx54oUPM4fL1X6aIN1jOHYtKjT2LAMoO/8s6s29dPfwoQmNLdkrEWoEtmMwIDAQAB";
 
        String data =  Base64Utils.encode(RSAUtils.encryptByPublicKey(content.getBytes("UTF-8"), publicKey));
+
        System.out.println(data);
 
 
