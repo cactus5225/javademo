@@ -41,6 +41,7 @@ public class ReorderTest {
             other.start();
             latch.countDown();
             one.join();
+
             other.join();
 
             String result = "第" + i + "次 (" + x + "," + y + "）";
